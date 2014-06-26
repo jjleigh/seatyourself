@@ -1,4 +1,13 @@
 class RestaurantsController < ApplicationController
+
+	def find_restaurant
+		Restaurant.find(params[:id])
+	end
+
+	# def display_name
+	# 	@name = Restaurant.find(params[:name])
+	# end
+
   def index
   	@restaurants = Restaurant.all
   end
@@ -22,7 +31,26 @@ class RestaurantsController < ApplicationController
   end
 
   def edit
+  	@restaurant = find_restaurant
   end
+
+  def update
+  	@restaurant = find_restaurant
+
+  	if @restaurant.update_attributes(restaurant_params)
+  		redirect_to restaurants_path(@restaurant)
+  	else
+  		render 'edit'
+  	end
+  end 
+
+#check this over with mina to make sure the redirect is correct
+ 	def destroy
+ 	 @restaurant = find_restaurants
+ 	 @restaurant.destroy
+ 	 redirect_to restaurants_path(@restaurants)	
+ 	end
+
 
   private 
   def restaurant_params
