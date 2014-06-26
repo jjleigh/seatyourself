@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
-  resources :users
 
+  root 'restaurants#index'
+  resources :users, except: [:index]
   resources :restaurants
 
   # The priority is based upon order of creation: first created -> highest priority.

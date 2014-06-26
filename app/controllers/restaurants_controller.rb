@@ -4,10 +4,6 @@ class RestaurantsController < ApplicationController
 		Restaurant.find(params[:id])
 	end
 
-	# def display_name
-	# 	@name = Restaurant.find(params[:name])
-	# end
-
   def index
   	@restaurants = Restaurant.all
   end
@@ -46,7 +42,7 @@ class RestaurantsController < ApplicationController
 
 #check this over with mina to make sure the redirect is correct
  	def destroy
- 	 @restaurant = find_restaurants
+ 	 @restaurant = find_restaurant
  	 @restaurant.destroy
  	 redirect_to restaurants_path(@restaurants)	
  	end

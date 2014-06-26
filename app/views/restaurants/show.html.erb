@@ -1,10 +1,16 @@
 <!-- Heading for restaurant -->
-<h1><%= %></h1>
+<h1><%= @restaurant.name %></h1>
 <!-- other info(location, contact info, email, cuisine, price range) -->
-<p><%= %></p>
-<p><%= %></p>
-<p><%= %></p>
+<p><%= @restaurant.address%></p>
+<p><%= @restaurant.email%></p>
+<p><%= @restaurant.price_range%></p>
 <p><%= %></p>
 
 <!-- displays the summary -->
-<p><%= %></p>
+<p><%= @restaurant.summary%></p>
+
+<!-- displays the links -->
+<%= link_to 'Your reviews' %><br />
+<%= link_to 'Edit page', edit_restaurant_path(@restaurant) %><br/>
+<%= link_to 'Delete Account', restaurant_path(@restaurant), :method => :delete %><br/>
+<%= link_to 'Your reservations' %>
