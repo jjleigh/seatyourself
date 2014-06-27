@@ -1,0 +1,10 @@
+<h1>Your Reservations</h1>
+
+
+<%= @reservations.each do |r| %>
+	<div class= 'reservations'>
+		<%= r.time %>
+		<%= r.date %>
+		<%= r.group_size %>
+	</div>
+<% end %>

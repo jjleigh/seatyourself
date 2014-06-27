@@ -1,4 +1,8 @@
 class ReservationsController < ApplicationController
+	def index
+		@reservations = Reservation.all
+	end
+
 	def show
 		@reservation = Reservation.find(params[:id])
 	end
@@ -34,12 +38,11 @@ class ReservationsController < ApplicationController
 	def destroy
 		@reservation = Reservation.find(params[:id])
 		@reservation.destroy
-		redirect_to #i would like to go back to my user page
-		
+		redirect_to #i would like to go back to my user page	
 	end
+	
 	private 
 	def reservation_params
 		params.require(:reservation).permit(:time, :date, :group_size)
 	end
-
 end

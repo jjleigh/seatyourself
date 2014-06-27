@@ -3,7 +3,8 @@
 <p>What would you like to do today?</p>
 <p>Check out our new restaurants in your area</p>
 
-<%= link_to 'Your reviews' %><br/>
 <%= link_to 'Edit page', edit_user_path(@user) %><br/>
 <%= link_to 'Delete Account', user_path(@user), :method => :delete %><br/>
-<%= link_to 'Your reservations' %>
+<%= link_to 'Restaurants', root_url %><br />
+<%= link_to 'Your reservations',  reservations_path %><br>
+<%= link_to 'Your reviews' %><br/>

@@ -4,7 +4,8 @@
 <p><%= @restaurant.address%></p>
 <p><%= @restaurant.email%></p>
 <p><%= @restaurant.price_range%></p>
-<p><%= %></p>
+<p><%= @restaurant.number%></p>
+<p><%= @restaurant.capacity%></p>
 
 <!-- displays the summary -->
 <p><%= @restaurant.summary%></p>
@@ -13,4 +14,5 @@
 <%= link_to 'Your reviews' %><br />
 <%= link_to 'Edit page', edit_restaurant_path(@restaurant) %><br/>
 <%= link_to 'Delete Account', restaurant_path(@restaurant), :method => :delete %><br/>
-<%= link_to 'Your reservations' %>
+<%= link_to 'Make a Revervation', new_reservation_path %>
+<%= link_to 'Back', root_url %>
