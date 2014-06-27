@@ -1,3 +1,3 @@
 class Category < ActiveRecord::Base
-	#assiosiations
+	#assosiations
 end
