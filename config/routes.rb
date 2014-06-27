@@ -1,5 +1,13 @@
 Rails.application.routes.draw do
 
+  get 'categories/index'
+
+  get 'categories/new'
+
+  get 'categories/edit'
+
+  get 'categories/show'
+
   root 'restaurants#index'
   resources :users, except: [:index]
   resources :restaurants
