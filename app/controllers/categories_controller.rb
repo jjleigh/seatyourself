@@ -15,6 +15,8 @@ class CategoriesController < ApplicationController
   end
 
   def show
+    @cuisine = ['Asian', 'African', 'Caribbean', 'European','Middle Eastern', 
+      'South American', 'Western', 'Veg']
   	@category = Category.find(params[:id])
   end
 end

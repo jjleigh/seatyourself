@@ -1,5 +1,7 @@
-<%= form_for (@reservation) do |f| %>
-	<% id @reservation.errors.any? %>
+
+<%= form_for [@restaurant, @reservation] do |f| %>
+
+	<% if @reservation.errors.any? %>
 		<div id="error_explanation">
 			<h2><%= pluralize(@reservation.errors.count, "error") %>prohibited this products from being saved:</h2>
 			<ul>
@@ -8,19 +10,23 @@
 				<% end %>
 			</ul>
 		</div>
-
+	<% end %>
+	<%= %> 
 		<div class="fields">
 			<%= f.label :time %><br>
-			<%= f.text_field :time %>
+			<%= f.select(:time, options_for_select(['6:00pm','7:00pm','8:00pm', '9:00pm', '10:00pm']))%>
 		</div>
+		<%=f.hidden_field_tag :restaurant %>
 		<div class="fields">
 			<%= f.label :date %><br>
-			<%= f.text_field :date %>
+			<%= f.select(:date, options_for_select(@limit)) %>
 		</div>
+
 		<div class="fields">
 			<%= f.label :group_size %><br>
 			<%= f.text_field :group_size %>
 		</div>
+
 		<div class="actions">
 			<%= f.submit %>
 		</div>

@@ -4,9 +4,9 @@ Rails.application.routes.draw do
 
   root 'restaurants#index'
   resources :users, except: [:index]
-  resources :restaurants
-  resources :reservations
-
+  resources :restaurants do
+    resources :reservations
+  end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
