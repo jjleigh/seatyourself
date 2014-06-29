@@ -13,6 +13,94 @@
  *= require_tree .
  *= require_self
  */
-.mydiv {
-	
+ * {
+ 	margin: 0;
+ 	padding: 0;
+ }
+ body {
+ 	background-color: #415C31;
+ }
+ footer, header {
+ 	width: 100%;
+ 	background-color: white;
+ }
+ #head-nav {
+ 	top: 0;
+ 	bottom: auto;
+ 	right: 0;
+ 	left: 0;
+ 	z-index: 5;
+	position: fixed;
+	text-align: right;
+	border-bottom: 1px solid #ABB7C4;
+ }
+ table {
+ 	position: relative;
+ 	width: 100%;
+ 	margin: 0 auto;
+ 	height: 55px;
+ 	font-family: 'lato';
+ }
+ tr {
+ 	padding-top: 5px;
+ 	padding-left: 10px;
+ }
+ #logo {
+ 	font-family: 'Josefin Sans';
+ 	font-style: italic;
+ 	text-align: left;
+ 	padding-left: 55px;
+ }
+ #about {
+	text-align: right;
+	width: 50px;
+	padding-right: 25px;
+	font-family: 'lato';
+ }
+ #login {
+	text-align: right;
+	padding-right: 25px;
+	width: 58px;
+	font-family: 'lato';
+ }
+ #signup{
+	text-align: right;
+	width: 69px;
+	padding-right: 25px;
+	font-family: 'lato';
+ }
+ #foot-nav {
+ 	position: fixed;
+ 	bottom: 0;
+ 	left: 0;
+ 	font-family: 'lato';
+ }
+ #contact-us {
+ 	width:85px;
+ 	padding-left: 520px;
+ 	text-align: center;
+ }
+ #questions{
+	width: 45px;
+	text-align: center;
+	padding-right: 440px;
+	margin: 0;
+ }
+.nav-bars {
+	font-family: verdana;
+	color: #415C31;
+}
+/*this applies to the restaurant index*/
+
+#res-table {
+	padding-top: 350px;
+	padding-left: 10px;
+}
+
+/*this applies to the categories page*/
+body {
+	margin: 0;
+}
+.search-box {
+
 }

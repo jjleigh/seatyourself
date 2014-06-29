@@ -28,6 +28,12 @@
 		<%= f.label :number %><br />
 		<%= f.text_field :number %>
 	</div>
+
+	<div class= "field">
+		<%= f.label :cuisine %><br />
+		<%= f.select(:cuisine, options_for_select(['Asian', 'African', 'Caribbean', 'European','Middle Eastern', 
+      'South American', 'Western', 'Veg'])) %>
+	</div>
 		
 	<div class= "field">
 		<%= f.label :summary %><br />
@@ -35,7 +41,7 @@
 	</div>
 	<div class= "field">
 		<%= f.label :price_range %><br />
-		<%= f.text_field :price_range %>
+		<%= f.select(:price_range, options_for_select(['$', 'Low'], ['$$', 'Mid-range'], ['$$$', 'High'])) %>
 	</div>
 		<div class= "field">
 		<%= f.label :capacity %><br />

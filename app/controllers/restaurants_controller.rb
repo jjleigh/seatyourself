@@ -40,7 +40,6 @@ class RestaurantsController < ApplicationController
   	end
   end 
 
-#check this over with mina to make sure the redirect is correct
  	def destroy
  	 @restaurant = find_restaurant
  	 @restaurant.destroy

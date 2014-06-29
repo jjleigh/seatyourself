@@ -1,25 +1,26 @@
-<h1>Restaurants on Seatyourself</h1>
-<table>
-	<tr>
-		<th>Name</th>
-		<th>Price Range</th>
-		<th>Address</th>
-		<th>Cuisine</th>
-		<th>Summary</th>
-		<th>Capacity</th>
-	</tr>
+<div id="res-table">
+	<table>
+		<tr>
+			<th>Name</th>
+			<th>Price Range</th>
+			<th>Address</th>
+			<th>Cuisine</th>
+			<th>Summary</th>
+			<th>Capacity</th>
+		</tr>
 
 
-<% @restaurants.each do |restaurant| %>
+	<% @restaurants.each do |restaurant| %>
 
-	<tr>
-		<td><%= restaurant.name %></td>
-		<td><%= restaurant.price_range %></td>
-		<td><%= restaurant.address %></td>
-		<!--  -->
-		<td><%= restaurant.summary %></td>
-		<td><%= restaurant.capacity %></td>
-		<td><%= link_to 'Show', restaurant_path(restaurant) %></td>
-	</tr>
-<% end %>
-</table>
+		<tr>
+			<td><%= restaurant.name %></td>
+			<td><%= restaurant.price_range %></td>
+			<td><%= restaurant.address %></td>
+			<!--  -->
+			<td><%= restaurant.summary %></td>
+			<td><%= restaurant.capacity %></td>
+			<td><%= link_to 'Show', restaurant_path(restaurant) %></td>
+		</tr>
+	<% end %>
+	</table>
+</div>
