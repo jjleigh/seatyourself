@@ -1,15 +1,16 @@
 <%= form_for(@restaurant) do |f| %>
 	<% if @restaurant.errors.any? %>
 
-	<div id="error_explanation">
-		<h2><%= pluralize(@restaurant.errors.count, "error") %>prohibited this product from being saved:</h2>
-		<ul>
-			<% @restaurant.errors.full_messages.each do |msg| %>
-				<li><%= msg %></li>
-				<% end %>
-		</ul>
-	</div>
+		<div id="error_explanation">
+			<h2><%= pluralize(@restaurant.errors.count, "error") %>prohibited this product from being saved:</h2>
+			<ul>
+				<% @restaurant.errors.full_messages.each do |msg| %>
+					<li><%= msg %></li>
+					<% end %>
 
+			</ul>
+		</div>
+	<% end %>
 	<div class= "field">
 		<%= f.label :name %><br/>
 		<%= f.text_field :name  %>
@@ -31,17 +32,15 @@
 
 	<div class= "field">
 		<%= f.label :cuisine %><br />
-		<%= f.select(:cuisine, options_for_select(['Asian', 'African', 'Caribbean', 'European','Middle Eastern', 
-      'South American', 'Western', 'Veg'])) %>
+		<%= f.select(:category_id, options_for_select(@cat_list)) %>
 	</div>
-		
 	<div class= "field">
 		<%= f.label :summary %><br />
 		<%= f.text_field :summary %>
 	</div>
 	<div class= "field">
 		<%= f.label :price_range %><br />
-		<%= f.select(:price_range, options_for_select(['$', 'Low'], ['$$', 'Mid-range'], ['$$$', 'High'])) %>
+		<%= f.select(:price_range, options_for_select([['$', 'Low'], ['$$', 'Mid-range'], ['$$$', 'High']])) %>
 	</div>
 		<div class= "field">
 		<%= f.label :capacity %><br />

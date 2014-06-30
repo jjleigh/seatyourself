@@ -15,30 +15,12 @@
 		<h3>categories</h3>
 	</nav>
 	<div class= "categories">
+		<% @categories.each do |c| %>
 		<div class = "cuisine">
-			<h3>Asian</h3>
+			<h3><%= link_to c.cuisine, category_restaurants_path(c)%></h3>
 		</div>
-		<div class = "cuisine">
-			<h3>African</h3>
-		</div>
-		<div class = "cuisine">
-			<h3>Caribbean</h3>
-		</div>
-		<div class = "cuisine">
-			<h3>European</h3>
-		</div>
-		<div class = "cuisine">
-			<h3>Middle Eastern</h3>
-		</div>
-		<div class = "cuisine">
-			<h3>South American</h3>
-		</div>
-		<div class = "cuisine">
-			<h3>Western</h3>
-		</div>
-		<div class = "cuisine">
-			<h3>Veg</h3>
-		</div>
+			
+		<% end %>
 	</div>
 </div>
 

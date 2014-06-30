@@ -5,7 +5,13 @@ class RestaurantsController < ApplicationController
 	end
 
   def index
-  	@restaurants = Restaurant.all
+    @id = params[:category_id]
+    p @id
+    @cat = Category.find(@id)
+    p @cat
+    @restaurants = @cat.restaurants
+  	#@restaurants = Restaurant.all
+    p @restaurants
   end
 
   def show
@@ -13,6 +19,9 @@ class RestaurantsController < ApplicationController
   end
 
   def new
+    @categories = Category.all
+    @cat_list = @categories.inject([]){|arr, cat| arr <<[cat.cuisine, cat.id]}
+    p @cat_list
   	@restaurant = Restaurant.new
   end
 
@@ -22,6 +31,7 @@ class RestaurantsController < ApplicationController
   	if @restaurant.save
   		redirect_to restaurant_path(@restaurant)
   	else 
+      p @restaurant.errors
   		render "new"
   	end
   end
@@ -49,6 +59,6 @@ class RestaurantsController < ApplicationController
 
   private 
   def restaurant_params
-  	params.require(:restaurant).permit(:name, :summary, :email, :address, :capacity, :number, :price_range)
+  	params.require(:restaurant).permit(:name, :summary, :email, :address, :capacity, :number, :price_range, :category_id, :cuisine)
   end 
 end
