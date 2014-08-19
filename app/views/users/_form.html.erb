@@ -1,24 +1,30 @@
-<%= form_for (@user) do |f| %>
-	
-	<div class = 'fields'>
-		<%= f.label :name %><br />
-		<%= f.text_field :name %>
-	</div>
-	
-	<div class = 'fields'>
-		<%=f.label :email %><br />
-		<%= f.text_field :email%>
-	</div>
+<div class="row">
+	<div class="large-12 large-centered columns">
+		<div class="site-forms">
+			<%= form_for (@user) do |f| %>
+		
+				<div class = 'fields'>
+					<%= f.label :name %><br />
+					<%= f.text_field :name %>
+				</div>
+				
+				<div class = 'fields'>
+					<%=f.label :email %><br />
+					<%= f.text_field :email%>
+				</div>
 
-	<div class = 'fields'>
-		<%= f.label :password %><br />
-		<%= f.password_field :password %>
+				<div class = 'fields'>
+					<%= f.label :password %><br />
+					<%= f.password_field :password %>
+				</div>
+				<div class = 'fields'>
+					<%= f.label :password_confirmation %><br />
+					<%= f.password_field :password_confirmation %>
+				</div>
+				<div class = 'actions buttons'>
+					<%= f.submit 'Sign up', :class => 'button'%>
+				</div>
+			<% end %>
+		</div>
 	</div>
-	<div class = 'fields'>
-		<%= f.label :password_confirmation %><br />
-		<%= f.password_field :password_confirmation %>
-	</div>
-	<div class = 'actions'>
-		<%= f.submit %>
-	</div>
-<% end %>
+</div>
