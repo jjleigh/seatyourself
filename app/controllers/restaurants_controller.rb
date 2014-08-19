@@ -6,12 +6,12 @@ class RestaurantsController < ApplicationController
 
   def index
     @id = params[:category_id]
-    p @id
-    @cat = Category.find(@id)
-    p @cat
-    @restaurants = @cat.restaurants
-  	#@restaurants = Restaurant.all
-    p @restaurants
+    # p @id
+    # @cat = Category.find(@id)
+    # p @cat
+    # @restaurants = @cat.restaurants
+  	@restaurants = Restaurant.all
+    # p @restaurants
   end
 
   def show
