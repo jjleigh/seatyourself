@@ -9,18 +9,20 @@
 <!-- about the restaurant -->
       <div class="row">
      
-	      	<div class="large-4 large-push-8 columns">
+	      	<div class="large-4 columns">
 	      		<img src="http://4.bp.blogspot.com/-7-QoLtYvRMA/UthhyiiMGxI/AAAAAAAAOZM/GyddpyylOmU/s1600/miso+soup-+lede-1.jpg">
 	      		
 	        <%#= link_to image_tag(picture.url), "/pictures/#{picture.id}", :class => 'index-image' %>
 					</div>
 	
 
-        <div class="large-8 large-pull-4 columns">
-      		<h1><%= @restaurant.name %></h1>
-      		<p><%#= @restaurant.category.cuisine%></p>
-      		<p><%#= @restuarant.rating%></p>
-      		<p><%= @restaurant.price_range%></p>
+        <div class="large-8 columns">
+        	<div class="about-restaurant">
+        		<h1><%= @restaurant.name %></h1>
+      			<p><%#= @restaurant.category.cuisine%></p>
+      			<p><%#= @restuarant.rating%></p>
+      			<p><%= @restaurant.price_range%></p>
+        	</div>
       	</div>
       </div>
 
@@ -28,21 +30,24 @@
 <!-- restaurant contact -->
 			<div class="row">
 				<div class="large-12 columns">
-					<p><%= @restaurant.number%></p>
-			   	<p><%= @restaurant.address%></p>
-					<p><%= @restaurant.email%></p>
-					<p><%= @restaurant.capacity%></p>
+					<div class="contact-restaurant">
+						<p>Phone: <%= @restaurant.number%></p>
+				   	<p>Address: <%= @restaurant.address%></p>
+						<p>Email: <%= @restaurant.email%></p>
+						<p>Capacity: <%= @restaurant.capacity%></p>
+					</div>
 				</div>
 			</div>
 			
 			<div class="row">
 				<div class="large-12 columns">
-					<p><%= @restaurant.summary%></p>
-					<!-- only show this if you are the owner of this restaurant -->
-					<%= link_to 'Your reviews' %><br />
-					<%= link_to 'Edit page', edit_restaurant_path(@restaurant) %><br/>
-					<%= link_to 'Delete Account', restaurant_path(@restaurant), :method => :delete %><br/>
-					<%= link_to 'Make a Revervation', new_restaurant_reservation_path(@restaurant) %>
+					<div class="summary-restaurant">
+						<p>Summary: <%= @restaurant.summary%></p>
+						<!-- only show this if you are the owner of this restaurant -->
+						<%= link_to 'Edit page', edit_restaurant_path(@restaurant) %><br/>
+						<%= link_to 'Delete Account', restaurant_path(@restaurant), :method => :delete %><br/>
+						<%= link_to 'Make a Revervation', new_restaurant_reservation_path(@restaurant) %>
+					</div>
 				</div>
 			</div>
 
