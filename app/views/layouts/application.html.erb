@@ -29,16 +29,16 @@
         <section class="top-bar-section">
     <!-- Right Nav Section -->
           <ul class="right">
-            <li><a href="#">About</a></li>
-            <% if current_user %>
-              <li><%= link_to 'Profile', user_path(current_user) %>
-              <li><%= link_to 'Log out', log_out_path %></li>
-            <% else %>
-            <li>
-              <%= link_to 'Log In',new_session_path %>
-            </li>
-             <li><%= link_to 'Sign Up',new_user_path %></li>
-             <% end %>
+            <div class="right-navigation-container">
+              <li><a href="#">About</a></li>
+              <% if current_user %>
+                <li><%= link_to 'Profile', user_path(current_user) %>
+                <li><%= link_to 'Log out', log_out_path %></li>
+              <% else %>
+                <li><%= link_to 'Log In',new_session_path %></li>
+                <li><%= link_to 'Sign Up',new_user_path %></li>
+              <% end %>
+            </div>
           </ul>
         </section>
       </nav>

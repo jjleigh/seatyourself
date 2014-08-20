@@ -1,6 +1,11 @@
 /*this has to do with the home page*/
 #app-logo {
 	padding-left: 25px;
+
+	padding-top: 15px;	
+}
+
+#app-logo > a {
 	font-family: courgette;
 	font-size: 30px;
 	color: #4C9D00 !important;
@@ -15,8 +20,25 @@
 
 }
 .top-bar {
-	/*padding-top: 50px;*/
+		background-color: white;
+		height: 70px;
 }
+
+.right-navigation-container {
+	padding-right: 25px;
+	background-color: white;
+	padding-top: 15px;
+	
+
+
+	a {
+		color: #4C9D00 !important;
+		background-color: white !important;
+		font-size: 15px !important;
+		padding-left: 20px !important;
+	}
+	
+	}
 
 #res-table {
 	width: 100%;
