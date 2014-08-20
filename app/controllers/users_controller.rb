@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-
+  before_filter :ensure_logged_in, :only =>[:edit, :create, :show, :update, :destroy]
   def show
   	@user = User.find(params[:id])
   end
@@ -12,7 +12,7 @@ class UsersController < ApplicationController
   	@user = User.new(user_params)
 
   	if @user.save
-  		redirect_to user_path(@user)
+  		redirect_to new_session_path
   	else
   		render 'new'
   	end
