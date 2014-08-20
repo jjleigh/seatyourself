@@ -2,7 +2,9 @@ Rails.application.routes.draw do
   resources :categories, :only => [:show, :index] do
     resources :restaurants, :only => [:index]
   end
-  resources :sessions, :only => [:new, :create, :destroy]
+  resources :sessions #:only => [:new, :create, :destroy]
+
+  get "log_out" => "sessions#destroy", :as => "log_out"
 
   root 'restaurants#index'
   resources :users, except: [:index]
