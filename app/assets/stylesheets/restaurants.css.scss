@@ -49,6 +49,16 @@
 	font-weight: bold;
 	font-size: 27px;
 }*/
+
+/*.index-image {
+	max-width: 100%;
+	width: 300px;
+	height: 193px ;
+	display: block;
+	position: relative;
+	
+}*/
+
  
  .grid {
     padding: 10px 50px 20px 10px;
@@ -62,29 +72,16 @@
     display: inline-block;
     width: 300px;
     margin: 0;
-    padding: 10px;
     text-align: left;
     position: relative;
+		x: 193px ;
+
+    img {
+    	max-width: 100%;
+    	display: block;
+    	position: relative;
+    }
 }
-
-
-
-
-figure {
-	margin: 0;
-	position: relative;
-	height: 193px ;
-	margin-bottom: 7px;
-}
-.index-image {
-	max-width: 100%;
-	width: 300px;
-	height: 193px ;
-	display: block;
-	position: relative;
-	
-}
-
 
 figcaption {
 	position: absolute;
@@ -92,7 +89,7 @@ figcaption {
 	top: 0;
 	left: 0;
 	margin-top: 0;
-	padding-bottom: 0;
+	padding-bottom: 20px;
 }
 
 figcaption h5 {
@@ -107,44 +104,62 @@ figcaption h5 {
 .subheader {
 	font-size: 10px;
 	padding-left: 10px;
-	padding-bottom: 100px;
+	padding-bottom: 10px;
 	color: white;
+
+	a{
+		text-align: center;
+    padding: 5px 10px;
+    border-radius: 2px;
+    display: inline-block;
+    background: #ed4e6e;
+    color: #fff;
+	}
 }
 
-.subheader:before {
-	/*content: 'by ';*/
+.cs-style-4 figure {
+	perspective: 1700px;
+	perspective-origin:0 50%;
+	transform-style: preserve-3d;
 }
 
-.cs-style-3 figure {
-	overflow: hidden;
+.cs-style-4 figure > div {
+    overflow: hidden;
 }
 
-.cs-style-3 figure img {
+.cs-style-4 figure img {
 	transition: transform 0.4s;
 }
 
-.no-touch .cs-style-3 figure:hover img,
-.cs-style-3 figure.cs-hover img {
-    transform: translateY(-20px);
+.no-touch .cs-style-4 figure:hover img,
+.cs-style-4 figure.cs-hover img {
+    transform: translateX(25%);
 }
 
-.cs-style-3 figcaption {
-	height: 58px;
-	width: 100%;
+.cs-style-4 figcaption {
+	height: 100%;
+	width: 45%;
 	top: auto;
 	bottom: 0;
+	transform-origin: 0 0;
+	backface-visibility: hidden;
 	opacity: 0;
-	transform: translateY(100%);
+	transform: rotateY(-90deg);
 	transition: transform 0.4s, opacity 0.1s 0.3s;
 }
 
-.no-touch .cs-style-3 figure:hover figcaption,
-.cs-style-3 figure.cs-hover figcaption {
+.no-touch .cs-style-4 figure:hover figcaption,
+.cs-style-4 figure.cs-hover figcaption {
     opacity: 1;
-    transform: translateY(0);
+     transform: rotateY(0deg);
     transition: transform 0.4s, opacity 0.1s;
 }
 
+.cs-style-4 figcaption a {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+}
 
 
 .blur-img {
