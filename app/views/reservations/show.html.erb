@@ -1,5 +1,28 @@
-<h1>Reservation made!</h1>
-<p>reservation time: <%= @reservation.time %></p>
-<p>reservation date: <%= @reservation.date %></p>
-<p>party of: <%= @reservation.group_size %></p>
-<p>See you soon!</p>
+<div class="row">
+	<div class="large-12 large-centered columns">
+		<div class="form-containers">
+			
+			<div class="row">
+				<div class="large-12 large-centered columns">
+					<div class="reservation-header">
+						<h1>Reservation made!</h1>
+					</div>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="large-12 large-centered columns">
+					<div class="reservation-details">
+						<p>reservation time: <%= @reservation.time %></p>
+						<p>reservation date: <%= @reservation.date %></p>
+						<p>party of: <%= @reservation.group_size %></p>
+						<p>See you soon!</p>
+					</div>
+				</div>
+			</div>
+
+
+		</div>
+	</div>
+</div>
+
