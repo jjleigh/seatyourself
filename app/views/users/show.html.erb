@@ -1,10 +1,190 @@
-<h1>Welcome <%= @user.name%>!</h1>
 
-<p>What would you like to do today?</p>
-<p>Check out our new restaurants in your area</p>
 
-<%= link_to 'Edit page', edit_user_path(@user) %><br/>
-<%= link_to 'Delete Account', user_path(@user), :method => :delete %><br/>
-<%= link_to 'Restaurants', root_url %><br />
-<%= link_to 'Your reservations',  reservations_path %><br>
-<%= link_to 'Your reviews' %><br/>
+ <div class="row">    
+    
+      
+    <div class="large-8 push-4 columns">
+
+      <div class="row">
+        <div class="large-12">
+          <h3 class="text-center user-head">Your favourites</h3>
+        </div>
+      </div>
+        
+      <div class="row">
+      
+        <div class="large-12 columns">
+      
+
+          <div class="panel user-images-panel">
+
+            <!-- all pictures on the first row -->
+            <div class="row">
+          
+              <div class="large-4 small-6 columns">
+
+                <div class="your-photogur-images  blur-img">
+                  <img src="http://placehold.it/1000x1000&text=Thumbnail">
+                </div>
+                
+
+                <!-- <div class="panel your-photogur-images-panel">
+                  <h5>title</h5>
+                  <h6 class="subheader">artist</h6>
+                </div> -->
+              </div>
+
+              <div class="large-4 small-6 columns">
+
+                <div class="your-photogur-images  blur-img">
+                  <img src="http://placehold.it/1000x1000&text=Thumbnail">
+                </div>
+
+                <!-- <div class="panel">
+                  <h5>title</h5>
+                  <h6 class="subheader">artist</h6>
+                </div> -->
+              </div>
+
+              <div class="large-4 small-6 columns">
+                
+                <div class="your-photogur-images  blur-img">
+                  <img src="http://placehold.it/1000x1000&text=Thumbnail">
+                </div>
+
+                <!-- <div class="panel">
+                  <h5>title</h5>
+                  <h6 class="subheader">artist</h6>
+                </div> -->
+              </div>
+            </div>
+
+
+
+<!-- all pictures on second row -->
+     <div class="row">
+          
+              <div class="large-4 small-6 columns">
+
+                <div class="your-photogur-images  blur-img">
+                  <img src="http://placehold.it/1000x1000&text=Thumbnail">
+                </div>
+                <!-- <div class="panel">
+                  <h5>title</h5>
+                  <h6 class="subheader">artist</h6>
+                </div> -->
+              </div>
+
+              <div class="large-4 small-6 columns">
+
+                <div class="your-photogur-images  blur-img">
+                  <img src="http://placehold.it/1000x1000&text=Thumbnail">
+                </div>
+<!-- 
+                <div class="panel">
+                  <h5>title</h5>
+                  <h6 class="subheader">artist</h6>
+                </div> -->
+              </div>
+
+              <div class="large-4 small-6 columns">
+
+                <div class="your-photogur-images  blur-img">
+                  <img src="http://placehold.it/1000x1000&text=Thumbnail">
+                </div>
+
+                <!-- <div class="panel">
+                  <h5>title</h5>
+                  <h6 class="subheader">artist</h6>
+                </div> -->
+              </div>
+            </div>
+
+<!-- all pictures on third row -->
+
+     <div class="row">
+          
+              <div class="large-4 small-6 columns">
+
+                <div class="your-photogur-images  blur-img">
+                  <img src="http://placehold.it/1000x1000&text=Thumbnail">
+                </div>
+
+                <!-- <div class="panel">
+                  <h5>title</h5>
+                  <h6 class="subheader">artist</h6>
+                </div> -->
+              </div>
+
+              <div class="large-4 small-6 columns">
+
+                <div class="your-photogur-images  blur-img">
+                  <img src="http://placehold.it/1000x1000&text=Thumbnail">
+                </div>
+
+                <!-- <div class="panel">
+                  <h5>title</h5>
+                  <h6 class="subheader">artist</h6>
+                </div> -->
+              </div>
+
+              <div class="large-4 small-6 columns">
+
+                <div class="your-photogur-images  blur-img">
+                  <img src="http://placehold.it/1000x1000&text=Thumbnail">
+                </div>
+
+                <!-- <div class="panel">
+                  <h5>title</h5>
+                  <h6 class="subheader">artist</h6>
+                </div> -->
+              </div>
+            </div>
+
+
+          </div>
+    
+        </div>
+      </div>
+
+
+    </div>
+    
+     
+     <!-- This handles the side panel -->
+    <div class="large-4 pull-8 columns">
+      
+      <div class="panel user-panel">  
+        <div class="row">
+          <div class="large-12 large-centered columns">
+              <img src="http://placekitten.com/g/400/500" class="user-image">
+          </div>
+        </div>
+        <div class="row">
+          <div class="large-12 large-centerd columns">
+            <h4 class='text-center user-side-head'><%= current_user.name%></h4>
+          </div>
+        </div>
+        <div class="row">
+          <div class="large-12 columns">
+            <ul class="side-nav text-center">
+              <li><a href="#">settings</a></li>
+              <li><%= link_to 'Edit page', edit_user_path(current_user) %></li>
+							<li><%= link_to 'Delete Account', user_path(current_user), :method => :delete %></li>
+							<li><%= link_to 'Your reviews' %></li>
+            </ul>
+          </div>
+        </div>
+        
+      </div>
+
+    </div>
+
+
+    
+          
+
+      
+        
+  </div>
+
