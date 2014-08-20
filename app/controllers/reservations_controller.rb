@@ -1,5 +1,5 @@
 class ReservationsController < ApplicationController
-	before_filter :ensure_logged_in, :only =>[:edit, :create, :show, :update, :destroy, :show]
+	before_filter :ensure_logged_in, :only =>[:edit, :create, :show, :update, :destroy]
 
 	def index
 		@reservations = Reservation.all
