@@ -45,7 +45,7 @@
 						<p>Summary: <%= @restaurant.summary%></p>
 						<!-- only show this if you are the owner of this restaurant -->
 						<%= link_to 'Edit page', edit_restaurant_path(@restaurant) %><br/>
-						<%= link_to 'Delete Account', restaurant_path(@restaurant), :method => :delete %><br/>
+						<%#= link_to 'Delete Account', restaurant_path(@restaurant), :method => :delete %><br/>
 						<%= link_to 'Make a Revervation', new_restaurant_reservation_path(@restaurant) %>
 					</div>
 				</div>
