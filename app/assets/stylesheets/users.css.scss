@@ -10,12 +10,51 @@
 .form-header {
 	margin-top: 15px;
 	margin-bottom: 15px;
-	color: white;
-	font-family: arial;
-	/*margin-top: 50px;*/
+
+	h1 {
+		color: white;
+		font-family: arial;
+	}
 }
 
 .site-forms {
 	margin-top: 30px;
 margin-bottom: 50px;
+}
+
+/*This handles the styling for the user page template*/
+
+.user-head {
+	color: orange;
+	font-family:Nobile;
+	font-weight: bold;
+	font-size: 25px;
+	padding-bottom: 20px;
+	padding-top: 45px;
+}
+
+.user-panel {
+	margin-top: 111px;
+
+
+		.user-image {
+			max-height: 320px;
+			max-width: 300px;
+			width: 100%;
+		}
+
+		.user-side-head {
+		padding-bottom: 12px;
+		padding-top: 15px;
+		font-family: quicksand;
+		}
+
+}
+/*This style ont he image wont work because it wont override foundation*/
+
+
+.your-photogur-images {
+	width: 100% !important;
+	height: 178px !important;
+	margin-bottom: 10px;
 }
