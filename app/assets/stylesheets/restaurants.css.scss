@@ -41,14 +41,34 @@
 
 /*This is the code for the restaurant grid on the home page*/
 
-.index-head {
+/*.index-head {
 	padding-bottom: 20px;
 	padding-top: 55px;
 	color: orange;
 	font-family:Nobile;
 	font-weight: bold;
 	font-size: 27px;
+}*/
+ 
+ .grid {
+    padding: 10px 50px 20px 10px;
+    max-width: 600px;
+    margin: 0 auto;
+    list-style: none;
+    text-align: center;
 }
+ 
+ .grid figure {
+    display: inline-block;
+    width: 300px;
+    margin: 0;
+    padding: 10px;
+    text-align: left;
+    position: relative;
+}
+
+
+
 
 figure {
 	margin: 0;
