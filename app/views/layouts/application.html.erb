@@ -23,21 +23,24 @@
             </div>
           </li>
      <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
-          <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+          <li class="toggle-topbar icon"><a href="#"><span>Menu</span></a></li>
         </ul>
 
         <section class="top-bar-section">
     <!-- Right Nav Section -->
           <ul class="right">
             <div class="right-navigation-container">
-              <li><a href="#">About</a></li>
-              <% if current_user %>
-                <li><%= link_to 'Profile', user_path(current_user) %>
-                <li><%= link_to 'Log out', log_out_path %></li>
-              <% else %>
-                <li><%= link_to 'Log In',new_session_path %></li>
-                <li><%= link_to 'Sign Up',new_user_path %></li>
-              <% end %>
+             
+                <div class="row collapse">
+                  <li><a href="#">About</a></li>
+                  <% if current_user %>
+                    <li><%= link_to 'Profile', user_path(current_user) %>
+                    <li><%= link_to 'Log out', log_out_path %></li>
+                  <% else %>
+                    <li><%= link_to 'Log In',new_session_path %></li>
+                    <li><%= link_to 'Sign Up',new_user_path %></li>
+                  <% end %>
+                </div>
             </div>
           </ul>
         </section>
