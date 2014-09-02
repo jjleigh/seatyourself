@@ -1,27 +1,78 @@
-<div>
-	<div class="search-box">
-		<div>
-			<h1>Discover Restaurants in your area</h1>
+
+<div class="bg-img">
+	<div class="row">
+
+		<div class="row">
+			<div class="large-8 large-centered columns">
+				<h1 id="discover">Discover restaurants near you</h1>
+			</div>
 		</div>
-		<div id="search">
-			<form action='/restaurants' class="keywords" novalidate>
-				<span>
-					<input id= 's' name='s' placeholder="search restaurants..." type="text" >
-				</span>
-			</form>
-		</div>
-	</div>
-	<nav id='categories-nav'>
-		<h3>categories</h3>
-	</nav>
-	<div class= "categories">
-		<% @categories.each do |c| %>
-		<div class = "cuisine">
-			<h3><%= link_to c.cuisine, category_restaurants_path(c)%></h3>
-		</div>
-			
+
+
+	 	<%= form_tag restaurants_path, :method => 'get' do %>
+			<div class="row search-form">
+				<div class="large-8 large-centered columns">
+		     
+	        <div class="large-9 columns">
+	          <%= text_field_tag :search, params[:search], :placeholder => 'Search for restaurants', :class => 'input-bar' %>
+	        </div>
+	        <div class="large-3 columns">
+	          <%= submit_tag "search", :name => nil, :class => 'button postfix input-button'%>
+	        </div>
+			 	</div>
+			</div>
 		<% end %>
+	</div>
+
+
+</div>
+
+
+<div class="category-page-header">	
+	<div class="row">
+		<h3 class="text-center">Categories</h3>
 	</div>
 </div>
 
 
+
+ <div class="panel-container">
+
+  <% @categories.each do |category| %>
+		<div class="row">
+    	<div class="large-12 small-12 columns">
+				<% if category.id.odd? %>
+	        <div class="row">
+	        	<div class="large-5 small-12 columns">
+	        		<div class="cat-image-container">
+	        			
+		            <%= link_to image_tag(category.image), @category, :class => 'cat-image' %>
+	        		</div>
+	          	<h5><%= category.cuisine %></h5>
+	        	</div>
+
+						<div class="large-7 small-12 columns">
+	          	<h5><%= category.summary %></h5>
+	          </div>
+	        </div> 
+	      <% else %>
+	      	<div class="row">
+
+						<div class="large-7 small-12 columns">
+	          	<h5><%= category.summary %></h5>
+	          </div>
+	        	<div class="large-5 small-12 columns">
+	        		<div class="cat-image-container">
+	        			
+		            <%= link_to image_tag(category.image), @category, :class => 'cat-image' %>
+	        		</div>
+	          	<h5><%= category.cuisine %></h5>
+	        	</div>
+	        </div>
+	      <% end %>
+
+
+    	</div>
+		</div>
+ <% end %>
+</div>
