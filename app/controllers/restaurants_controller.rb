@@ -1,5 +1,5 @@
 class RestaurantsController < ApplicationController
-
+    before_filter :ensure_logged_in, :only =>[:new, :create, :edit, :destroy, :update]
 	def find_restaurant
 		Restaurant.find(params[:id])
 	end
@@ -7,13 +7,12 @@ class RestaurantsController < ApplicationController
 
 
   def index
-    # @id = params[:category_id]
-    # p @id
-    # @cat = Category.find(@id)
-    # p @cat
-    # @restaurants = @cat.restaurants
-  	@restaurants = Restaurant.all
-    # p @restaurants
+    @restaurants = Restaurant.search(params[:search])
+
+    if @restaurants.size.zero?
+      flash.now[:alert] = "No results found"
+  	 @restaurants = Restaurant.all
+    end
   end
 
   # def all
@@ -41,9 +40,6 @@ class RestaurantsController < ApplicationController
   end
 
   def new
-    # @categories = Category.all
-    # @cat_list = @categories.inject([]){|arr, cat| arr <<[cat.cuisine, cat.id]}
-    # p @cat_list
   	@restaurant = Restaurant.new
   end
 

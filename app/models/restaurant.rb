@@ -11,5 +11,14 @@ class Restaurant < ActiveRecord::Base
 	def availability(group_size, time)
 		reserve_size = reservations.where(time: time).sum(:group_size)
 		reserve_size + group_size <= capacity
-	end 
+	end
+
+
+	def self.search(search)
+
+		if search 
+			@restuarants = Restaurant.join(:category).where('lower(name) = ? OR lower(cuisine) = ?', search.downcase, search.downcase)
+	 	else
+	 		@restuarants = Restaurant.all
+	 end 
 end
