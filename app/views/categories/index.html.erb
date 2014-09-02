@@ -13,10 +13,10 @@
 			<div class="row search-form">
 				<div class="large-8 large-centered columns">
 		     
-	        <div class="large-9 columns">
+	        <div class="large-7 push-2 columns">
 	          <%= text_field_tag :search, params[:search], :placeholder => 'Search for restaurants', :class => 'input-bar' %>
 	        </div>
-	        <div class="large-3 columns">
+	        <div class="large-2 pull-3 columns">
 	          <%= submit_tag "search", :name => nil, :class => 'button postfix input-button'%>
 	        </div>
 			 	</div>
@@ -41,7 +41,7 @@
 
 
 
- <div class="panel-container">
+ <div class="category-panel-container">
 
   <% @categories.each do |category| %>
 		<div class="row">
