@@ -18,8 +18,10 @@ class Restaurant < ActiveRecord::Base
 	def self.search(search)
 
 		if search 
-			@restuarants = Restaurant.join(:category).where('lower(name) = ? OR lower(cuisine) = ?', search.downcase, search.downcase)
+				@restuarants = Restaurant.where('lower(name) = ?',  search.downcase)
+			# @restuarants = Restaurant.join(:category).where('lower(name) = ? OR lower(cuisine) = ?', search.downcase, search.downcase)
 	 	else
 	 		@restuarants = Restaurant.all
 	 end 
+	end
 end
