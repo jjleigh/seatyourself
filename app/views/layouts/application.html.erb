@@ -50,13 +50,12 @@
     </div>
   </header>
 
-       <% if flash[:notice] %>
-               <p id='notice'><% flash[:notice] %></p>
-       <% end %>
-
 <main role="main" class"main">
     <%= yield %>
 </main>
+  <% if flash[:notice] %>
+               <p id='notice'><% flash[:notice] %></p>
+       <% end %>
 
       <!-- <footer id="foot-nav">
         <nav class="nav-bars">
