@@ -27,19 +27,6 @@
 
 
 </div>
-<!-- 
-     <%#= form_tag (pictures_path), action: "search", method: "get" do %>
-                  <div class="row collapse">
-                    <div class="large-8 small-9 columns">
-                      <%#= text_field_tag :search, params[:search], :placeholder => 'Find pictures' %>
-                  
-                    </div>  
-                    <div class="large-4 small-3 columns">
-                      <%#= submit_tag "search", :name => nil, :class => 'button ' %>
-                    </div>
-                  </div>
-                <%# end %> -->
-
 
 
 
@@ -59,29 +46,28 @@
 
  <div class="panel-container">
 
-      <!-- <div class="panel index-panel"> -->
-        <div class="row">
-          <% @restaurants.each do |restaurant| %>
-        
-            <div class="large-4 small-6 columns cs-style-4 grid">
-              <figure>
-                <div class="blur-img">
-                	<a href=""><img src="http://4.bp.blogspot.com/-7-QoLtYvRMA/UthhyiiMGxI/AAAAAAAAOZM/GyddpyylOmU/s1600/miso+soup-+lede-1.jpg"></a>
-                  <%#= link_to image_tag(picture.url), "/pictures/#{picture.id}", :class => 'index-image' %>
-                </div>
-                
-                <figcaption>
-                    <h5><%= restaurant.name %></h5>
-                    <p><%#= restaurant.price_range %></p>
-                    <p><%#= restaurant.rating %></p>
-                    <span class="subheader"><%= link_to 'Go', restaurant_path(restaurant) %></span>
-                    
-                </figcaption>
-              </figure>
-            </div>
-          <% end %>
-        </div>
+  <div class="row">
+    <% @restaurants.each do |restaurant| %>
+  
+      <div class="large-4 small-6 columns cs-style-4 grid">
+        <figure>
+          <div class="blur-img">
+          	<a href=""><img src="http://4.bp.blogspot.com/-7-QoLtYvRMA/UthhyiiMGxI/AAAAAAAAOZM/GyddpyylOmU/s1600/miso+soup-+lede-1.jpg"></a>
+            <%#= link_to image_tag(picture.url), "/pictures/#{picture.id}", :class => 'index-image' %>
+          </div>
+          
+          <figcaption>
+              <h5><%= restaurant.name %></h5>
+              <p><%#= restaurant.price_range %></p>
+              <p><%#= restaurant.rating %></p>
+              <span class="subheader"><%= link_to 'Go', restaurant_path(restaurant) %></span>
+              
+          </figcaption>
+        </figure>
       </div>
+    <% end %>
+  </div>
+
 </div>
     
 		<div class="row">
