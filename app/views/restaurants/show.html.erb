@@ -10,18 +10,19 @@
       <div class="row">
      
 	      	<div class="large-4 columns">
-	      		<img src="http://4.bp.blogspot.com/-7-QoLtYvRMA/UthhyiiMGxI/AAAAAAAAOZM/GyddpyylOmU/s1600/miso+soup-+lede-1.jpg">
+	      		<!-- <img src="http://4.bp.blogspot.com/-7-QoLtYvRMA/UthhyiiMGxI/AAAAAAAAOZM/GyddpyylOmU/s1600/miso+soup-+lede-1.jpg"> -->
 	      		
-	        <%#= link_to image_tag(picture.url), "/pictures/#{picture.id}", :class => 'index-image' %>
+	        	<%= image_tag (@restaurant.url) , :class => 'restaurant-image' %>
 					</div>
 	
 
         <div class="large-8 columns">
         	<div class="about-restaurant">
         		<h1><%= @restaurant.name %></h1>
-      			<p><%#= @restaurant.category.cuisine%></p>
+        		<%= link_to '', edit_restaurant_path(@restaurant), :class => 'fa fa-pencil' %><br/>
+      			<p><strong>Cuisine: </strong><%= @restaurant.category.cuisine%></p>
       			<p><%#= @restuarant.rating%></p>
-      			<p><%= @restaurant.price_range%></p>
+      			<p><strong>Price range: </strong><%= @restaurant.price_range%></p>
         	</div>
       	</div>
       </div>
@@ -31,20 +32,20 @@
 			<div class="row">
 				<div class="large-12 columns">
 					<div class="contact-restaurant">
-						<p>Phone: <%= @restaurant.number%></p>
-				   	<p>Address: <%= @restaurant.address%></p>
-						<p>Email: <%= @restaurant.email%></p>
-						<p>Capacity: <%= @restaurant.capacity%></p>
+						<p><strong>Phone:</strong> <%= @restaurant.number%></p>
+				   	<p><strong>Address:</strong> <%= @restaurant.address%></p>
+						<p><strong>Email:</strong> <%= @restaurant.email%></p>
+						<p><strong>Capacity:</strong> <%= @restaurant.capacity%></p>
 					</div>
 				</div>
 			</div>
 			
 			<div class="row">
-				<div class="large-12 columns">
+				<div class="large-10 large-centered columns">
 					<div class="summary-restaurant">
-						<p>Summary: <%= @restaurant.summary%></p>
+						<p><strong>Summary:</strong> <%= @restaurant.summary%></p>
 						<!-- only show this if you are the owner of this restaurant -->
-						<%= link_to 'Edit page', edit_restaurant_path(@restaurant) %><br/>
+						
 						<%#= link_to 'Delete Account', restaurant_path(@restaurant), :method => :delete %><br/>
 						<%= link_to 'Make a Revervation', new_restaurant_reservation_path(@restaurant) %>
 					</div>
