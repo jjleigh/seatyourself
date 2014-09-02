@@ -4,8 +4,10 @@ class RestaurantsController < ApplicationController
 		Restaurant.find(params[:id])
 	end
 
+
+
   def index
-    @id = params[:category_id]
+    # @id = params[:category_id]
     # p @id
     # @cat = Category.find(@id)
     # p @cat
@@ -14,24 +16,43 @@ class RestaurantsController < ApplicationController
     # p @restaurants
   end
 
+  # def all
+  #   @restaurants = if params[:search]
+  #     Restaurant.where("LOWER(name) LIKE LOWER(?)", "%#{params[:search]}%").page(params[:page])
+  #   else
+  #     Restaurant.order('restaurants.name ASC').page(params[:page])
+  #   end
+
+  #   respond_to do |format| 
+  #     format.html
+  #     format.js 
+  #   end
+
+  # end
+
+
   def show
   	@restaurant = Restaurant.find(params[:id])
+    @category = @restaurant.category
+
+    if current_user
+      @review = @restautant.reviews.build
+    end
   end
 
   def new
-    @categories = Category.all
-    @cat_list = @categories.inject([]){|arr, cat| arr <<[cat.cuisine, cat.id]}
-    p @cat_list
+    # @categories = Category.all
+    # @cat_list = @categories.inject([]){|arr, cat| arr <<[cat.cuisine, cat.id]}
+    # p @cat_list
   	@restaurant = Restaurant.new
   end
 
   def create
   	@restaurant = Restaurant.new(restaurant_params)
-
+    
   	if @restaurant.save
   		redirect_to restaurant_path(@restaurant)
   	else 
-      p @restaurant.errors
   		render "new"
   	end
   end
@@ -53,7 +74,7 @@ class RestaurantsController < ApplicationController
  	def destroy
  	 @restaurant = find_restaurant
  	 @restaurant.destroy
- 	 redirect_to restaurants_path(@restaurants)	
+ 	 redirect_to restaurants_url
  	end
 
 

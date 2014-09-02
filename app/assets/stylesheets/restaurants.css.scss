@@ -63,6 +63,17 @@
 	min-height: 600px;
 }
 
+
+/* This handles the styling for the search form*/
+
+.search-form > .input-bar {
+	padding-right: 0 !important;
+}
+
+.search-form > .input-button {
+	padding-left: 0 !important;
+}
+
 /*This is the code for the restaurant grid on the home page*/
 
 /*.index-head {

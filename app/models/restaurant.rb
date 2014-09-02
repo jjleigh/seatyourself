@@ -1,6 +1,7 @@
 class Restaurant < ActiveRecord::Base
 	has_many :reservations
 	has_many :users, :through => :reservations
+	has_many :reviews 
 
 	belongs_to :category
 	# belongs_to :owner, :class_name => "user" (now i need to add a owner_id column to the restuarants model)

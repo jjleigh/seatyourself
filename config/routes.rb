@@ -1,4 +1,12 @@
 Rails.application.routes.draw do
+  get 'categories/new'
+
+  get 'categories/create'
+
+  get 'categories/show'
+
+  get 'categories/destroy'
+
   resources :categories, :only => [:show, :index] do
     resources :restaurants, :only => [:index]
   end
