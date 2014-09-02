@@ -42,32 +42,36 @@
 		<div class="row">
     	<div class="large-12 small-12 columns">
 				<% if category.id.odd? %>
+
 	        <div class="row">
-	        	<div class="large-5 small-12 columns">
+
+	        	<div class="large-5 small-12 columns category-figure">
 	        		<div class="cat-image-container">
-	        			
 		            <%= link_to image_tag(category.image), @category, :class => 'cat-image' %>
+		            <span class="caption"><span><%= link_to category.cuisine, @category %><span></span>
 	        		</div>
-	          	<h5><%= category.cuisine %></h5>
 	        	</div>
 
 						<div class="large-7 small-12 columns summary-container">
 	          	<h5><%= category.summary %></h5>
 	          </div>
+
 	        </div> 
 	        <hr>
+
+
 	      <% else %>
 	      	<div class="row">
 
 						<div class="large-7 small-12 columns summary-container">
 	          	<h5><%= category.summary %></h5>
 	          </div>
-	        	<div class="large-5 small-12 columns">
+	          
+	        	<div class="large-5 small-12 columns category-figure">
 	        		<div class="cat-image-container">
-	        			
 		            <%= link_to image_tag(category.image), @category, :class => 'cat-image' %>
+		            <span class="caption"><span><%= link_to category.cuisine, @category %><span></span>
 	        		</div>
-	          	<h5><%= category.cuisine %></h5>
 	        	</div>
 	        </div>
 	        <hr>
