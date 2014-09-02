@@ -34,6 +34,7 @@
              
                 <div class="row collapse">
                   <li><a href="#">About</a></li>
+                  <li><%= link_to "Categories", categories_url%></li>
                   <% if current_user %>
                     <li><%= link_to 'Profile', user_path(current_user) %>
                     <li><%= link_to 'Log out', log_out_path %></li>
