@@ -9,23 +9,39 @@
 	</div>
 
 
- 	<%= form_tag restaurants_path, :method => 'get' do %>
-		<div class="row search-form">
-			<div class="large-8 large-centered columns">
-		     
-	        <div class="large-9 columns">
-	          <%= text_field_tag :search, params[:search], :placeholder => 'Search for restaurants', :class => 'input-bar' %>
+	 	<%= form_tag restaurants_path, action: "search" ,method: 'get' do %>
+			<div class="row">
+				<div class="large-8 large-centered columns">
+			     
+	        <div class="large-7 push-2 columns">
+	          <%= text_field_tag :search, params[:search], :placeholder => 'Search for restaurants' %>
 	        </div>
-	        <div class="large-3 columns">
+	        <div class="large-2 pull-3 columns">
 	          <%= submit_tag "search", :name => nil, :class => 'button postfix input-button'%>
 	        </div>
-		 		</div>
+			 	</div>
 			</div>
 		<% end %>
-	</div>
+
+</div>
 
 
 </div>
+<!-- 
+     <%#= form_tag (pictures_path), action: "search", method: "get" do %>
+                  <div class="row collapse">
+                    <div class="large-8 small-9 columns">
+                      <%#= text_field_tag :search, params[:search], :placeholder => 'Find pictures' %>
+                  
+                    </div>  
+                    <div class="large-4 small-3 columns">
+                      <%#= submit_tag "search", :name => nil, :class => 'button ' %>
+                    </div>
+                  </div>
+                <%# end %> -->
+
+
+
 
 
 
