@@ -49,7 +49,7 @@ class RestaurantsController < ApplicationController
 
   def create
   	@restaurant = Restaurant.new(restaurant_params)
-    
+    @restaurant.user_id = current_user.id
   	if @restaurant.save
   		redirect_to restaurant_path(@restaurant)
   	else 
@@ -80,6 +80,6 @@ class RestaurantsController < ApplicationController
 
   private 
   def restaurant_params
-  	params.require(:restaurant).permit(:name, :summary, :email, :address, :capacity, :number, :price_range, :category_id, :cuisine)
+  	params.require(:restaurant).permit(:name, :summary, :email, :address, :capacity, :number, :price_range, :category_id)
   end 
 end
