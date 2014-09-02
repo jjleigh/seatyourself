@@ -19,9 +19,9 @@ class ReservationsController < ApplicationController
 	end
 
 	def create
-		p params
 		@restaurant = Restaurant.find(params[:restaurant_id])
 		@reservation = @restaurant.reservations.build(reservation_params)
+		@reservation.user_id = current_user.id
 
 		if @reservation.save 
 			redirect_to restaurant_reservation_path(params[:restaurant_id], @reservation)
