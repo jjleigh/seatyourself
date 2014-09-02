@@ -24,13 +24,13 @@ Category.create!(
 	Category.create!(
 		:cuisine => "Caribbean",
 		:image => "http://media-cache-ec0.pinimg.com/736x/29/12/31/291231e6746048af5514a67f2c48f625.jpg",
-		:summary => "Find awesome Carribbean cuisine restuarants in your area, we have many to choose from. Come taste the flavours of the islands and try Jamaican, Trinidadian or Cuban",
+		:summary => "Find awesome Carribbean cuisine restuarants in your area, we have many to choose from. Come taste the flavours of the islands and try Jamaican, Trinidadian or Cuban.",
 		:id => 3
 		)
 	Category.create!(
 		:cuisine => "European",
 		:image => "http://media-cache-ak0.pinimg.com/736x/0f/28/7c/0f287c901e3cf8206a997eb5c34bb8a6.jpg",
-		:summary => "Find awesome European cuisine restuarants in your area, we have many to choose from. Do you love Gyros? then try Greek, Everybody loves pasta an pizza Italian, Want to try Paella? go for Spanish plus more.",
+		:summary => "Find awesome European cuisine restuarants in your area, we have many to choose from. Do you love Gyros? then try Greek, Everybody loves pasta and pizza, so try Italian, Want to try Paella? go for Spanish.",
 		:id => 4
 		)
 	Category.create!(
@@ -48,13 +48,13 @@ Category.create!(
 	Category.create!(
 		:cuisine => "Vegetarian",
 		:image => "http://media-cache-ak0.pinimg.com/736x/de/e2/50/dee25014c416815b0d77178a81d16825.jpg",
-		:summary => "Find awesome Vegetarian, Vegan and Raw food restuarants in your area, we have many to choose from. Love your veggies? He have the places for you!",
+		:summary => "Find awesome Vegetarian, Vegan and Raw food restuarants in your area, we have many to choose from. Love your veggies? Then we have the places for you!",
 		:id => 7
 		)
 	Category.create!(
 		:cuisine => "Others",
 		:image => "http://media-cache-ak0.pinimg.com/736x/7b/d4/61/7bd46141695a81fff6ab6d77eb091439.jpg",
-		:summary => "Find awesome Cafe's, Bistros, Coffee shops and fusion cuisine restaurants in your area, we have many to choose from. Need a coffe break? look no further!",
+		:summary => "Find awesome Cafe's, Bistros, Coffee shops and fusion cuisine restaurants in your area, we have many to choose from. Need a coffe break? Well, look no further!",
 		:id => 8
 		)
 	Category.create!(
