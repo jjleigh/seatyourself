@@ -1,3 +1,38 @@
-// Place all the styles related to the reviews controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.review-panel {
+	border: 2px solid black;
+	margin-bottom: 100px;
+}
+
+.review-header {
+	background-color: silver;
+	font-family: muli;
+	font-weight: 300;
+	font-size: 30px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+
+}
+
+.reviews-container {
+	margin-bottom: 50px;
+	padding-top: 50px;
+	padding-left: 20px;
+}
+
+.review-form {
+	border-top: 2px solid gray;
+}
+
+.new-comment-input {
+	padding-top: 20px
+}
+
+.new-comment-input textarea {
+	size:100px;
+	height: 100px;
+}
+
+
+#comment-label {
+	display: none;
+}
