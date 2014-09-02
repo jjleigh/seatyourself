@@ -9,8 +9,10 @@
 		}
 }
 
+/*styling for categories*/
 .panel-container {
 	padding-top: 100px;
+	background-color: white;
 }
 
 .cat-image-container {
@@ -24,4 +26,8 @@
 	width: 100%;
 	height: 100%;
 	margin-bottom: 20px;
+}
+
+.summary-container {
+	padding-top: 80px;
 }
