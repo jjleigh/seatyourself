@@ -1,5 +1,5 @@
 <div class="row">
-	<div class="large-7 large-centered columns">
+	<div class="large-8 large-centered columns">
 		<%= form_for(@restaurant) do |f| %>
 			<% if @restaurant.errors.any? %>
 
@@ -39,20 +39,24 @@
 				</div>
 				<div class= "field">
 					<%= f.label :summary %><br />
-					<%= f.text_field :summary %>
+					<%= f.text_area :summary %>
 				</div>
 				<div class= "field">
 					<%= f.label :price_range %><br />
 					<%= f.select(:price_range, options_for_select([['$', 'Low'], ['$$', 'Mid-range'], ['$$$', 'High']])) %>
 				</div>
-					<div class= "field">
+				<div class= "field">
 					<%= f.label :capacity %><br />
 					<%= f.text_field :capacity %>
+				</div>
+				<div class= "field">
+					<%= f.label :image %><br />
+					<%= f.text_field :url %>
 				</div>
 
 
 				<div class="actions">
-					<%= f.submit 'Create', :class => 'button'%>
+					<%= f.submit 'Save', :class => 'button [tiny small large] form-buttons'%>
 				</div>
 			</div>
 		<% end %>
