@@ -2,6 +2,10 @@ class UsersController < ApplicationController
   before_filter :ensure_logged_in, :only =>[:edit, :create, :show, :update, :destroy]
   def show
   	@user = User.find(params[:id])
+
+    if current_user
+      @my_reservations = @user.reservations
+    end
   end
 
   def new
