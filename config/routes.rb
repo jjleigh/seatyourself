@@ -1,23 +1,15 @@
 Rails.application.routes.draw do
-  get 'categories/new'
+  root 'restaurants#index'
 
-  get 'categories/create'
-
-  get 'categories/show'
-
-  get 'categories/destroy'
-
-  resources :categories, :only => [:show, :index] do
-    resources :restaurants, :only => [:index]
-  end
   resources :sessions #:only => [:new, :create, :destroy]
-
   get "log_out" => "sessions#destroy", :as => "log_out"
 
-  root 'restaurants#index'
+  resources :categories, :only => [:show, :index] 
+
   resources :users, except: [:index]
   resources :restaurants do
     resources :reservations
+    resources :reviews, :only => [:show, :new, :create, :destroy, :edit, :update]
   end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
