@@ -27,28 +27,38 @@
 
 </div>
 
-
-
+<div class="sticky">
+  <nav class="top-bar" data-topbar role="navigation" data-options="sticky_on: large">
+		<div class="category-page-header">	
+			<div class="row">
+				<h3 class="text-center"><%= @category.cuisine%> restuarants</h3>
+			</div>
+		</div>
+  </nav>
+</div>
 
 
  <div class="panel-container">
 
-  <% @categories.each do |category| %>
-		<div class="row">
-    	<div class="large-12 small-12 columns">
-
-        <div class="row">
-        	<div class="large-5 small-12 columns">
-            <%= link_to image_tag(category.image), @category, :class => 'cat-image' %>
-          	<h5><%= category.name %></h5>
-        	</div>
-
-					<div class="large-7 small-12 columns">
-          	<h5><%= category.summary %></h5>
+  <div class="row">
+    <% @restaurants_in_category.each do |restaurant| %>
+  
+      <div class="large-4 small-6 columns cs-style-4 grid">
+        <figure>
+          <div class="blur-img">
+          	<%= link_to image_tag (restaurant.url) , :class => 'index-restaurant-image' %>
           </div>
-        </div>     
-    	</div>
-		</div>
- <% end %>
+          
+          <figcaption>
+              <h5><%= restaurant.name %></h5>
+              <p><%#= restaurant.price_range %></p>
+              <p><%#= restaurant.rating %></p>
+              <span class="subheader"><%= link_to 'Go', restaurant_path(restaurant) %></span>
+              
+          </figcaption>
+        </figure>
+      </div>
+    <% end %>
+  </div>
+
 </div>
-    
