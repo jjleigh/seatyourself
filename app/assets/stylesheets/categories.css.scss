@@ -43,6 +43,11 @@
 
 .summary-container {
 	padding-top: 80px;
+
+	h5 {
+		font-family: muli;
+		font-weight: 300;
+	}
 }
 
 
@@ -53,7 +58,7 @@ div.category-figure div.cat-image-container {
 }
 
 span.caption {
-	background: rgba(0,0,0,0.8);
+	background: rgba(0,0,0,0.7);
 	position: absolute;
 		 top: 0;
     margin: 0;
@@ -61,7 +66,7 @@ span.caption {
     width: 300px;
     color: white;
     font-family: Muli;
-    font-size: 25px;
+    font-size: 30px;
     cursor: pointer;
     display: table;
     opacity: 0;
@@ -83,7 +88,7 @@ span.caption {
 		opacity: 1;
 	}*/
 
-	div.category-figure div.cat-image-container:hover span.caption {
+	div.category-figure div.cat-image-container span.caption {
 		opacity: 1;
 	} 
 
