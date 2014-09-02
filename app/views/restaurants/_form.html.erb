@@ -35,7 +35,7 @@
 
 				<div class= "field">
 					<%= f.label :cuisine %><br />
-					<%= f.select(:category_id, options_for_select(@cat_list)) %>
+					<%= f.select(:category_id, [['African', 1],['Asian', 2],['Caribbean', 3],['European', 4],['Middle Eastern', 5],['South American', 6], ['Vegetarian', 7], ['Other',8], ['Dessert Café',9]]) %>
 				</div>
 				<div class= "field">
 					<%= f.label :summary %><br />
