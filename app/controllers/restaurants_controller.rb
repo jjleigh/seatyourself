@@ -35,7 +35,7 @@ class RestaurantsController < ApplicationController
     @category = @restaurant.category
 
     if current_user
-      @review = @restautant.reviews.build
+      @review = @restaurant.reviews.build
     end
   end
 
