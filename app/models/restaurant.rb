@@ -1,7 +1,7 @@
 class Restaurant < ActiveRecord::Base
-	has_many :reservations
-	has_many :users, :through => :reservations
-	has_many :reviews 
+	has_many :reservations, dependent: :destroy
+	has_many :users, :through => :reservations, dependent: :destroy
+	has_many :reviews, dependent: :destroy 
 
 	belongs_to :category
 	belongs_to :user
