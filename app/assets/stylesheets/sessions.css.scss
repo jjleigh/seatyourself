@@ -8,3 +8,41 @@
 	background-color: #4C9D00;
 	color: white;
 }
+
+
+
+.footer-container {
+	margin-top: 65px;
+}
+
+/*this handles the styling for the footer*/
+.learn-more {
+	background-color: #2F4016;
+
+	h5 {
+		font-family: muli;
+		color: silver;
+	}
+
+	p{ 
+		/*padding-bottom: 50px;*/
+		font-family: muli;
+		font-weight: 300;
+		color: silver
+	}
+}
+
+hr {
+	margin-bottom: 0;
+}
+
+
+.social-container {
+	margin-top: 16px;
+	padding-bottom: 40px;
+}
+
+.about-container {
+	padding-left: 200px;
+}
+
