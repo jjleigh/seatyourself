@@ -25,3 +25,11 @@
  	background-color: #4C9D00;
  	font-family: muli;
  }
+
+ .input-button:hover {
+ 	background-color: #4C9D00;
+ }
+
+ .input-button:focus {
+ 	background-color: #4C9D00;
+ }
