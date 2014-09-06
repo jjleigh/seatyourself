@@ -74,7 +74,7 @@
 								<div class="row">
 									<div class="large-12 columns comment-info">
 										<% if review.user != nil %>
-											<p id='commenter'><strong><%= review.user.name %></strong> on <em><%= review.created_at %></em></p>
+											<p id='commenter'><strong><%= review.user.name %></strong> on <em><%= review.created_at.strftime("%A, %B %d, %Y") %></em></p>
 											<% if current_user.id == review.user.id || current_user.id == @restaurant.user.id %>
 												<p><%= link_to "", [review.restaurant, review], :method => :delete, :class =>"fa fa-trash-o" %></p>
 											<% else %>
