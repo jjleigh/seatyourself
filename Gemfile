@@ -32,6 +32,18 @@ gem 'bcrypt', '~> 3.1.7'
 # Use unicorn as the app server
 gem 'unicorn'
 
+
+# Use fog to support amazon s3 for carrierwave
+gem "fog"
+# Use amazons sdk
+gem 'aws-sdk'
+# Use carrierwave for image uploading
+gem 'carrierwave'
+
+gem 'rmagick', :require => 'RMagick'
+
+gem 'figaro'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
