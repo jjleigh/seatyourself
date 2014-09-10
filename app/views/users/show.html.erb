@@ -30,9 +30,9 @@
                           <div class="large-12 large-centered columns">
                             <div class="reservation-details">
                               <p>Restaurant: <%= reservation.restaurant.name %></p>
-                              <p>Reservation time: <%= reservation.time.strftime(" %l, %p") %></p>
+                              <p>Reservation time: <%= reservation.time.strftime(" %l %p") %></p>
                               <p>Reservation date: <%= reservation.date.strftime("%A, %B %d, %Y") %></p>
-                              <p>Rarty of: <%= reservation.group_size %></p>
+                              <p>Party of: <%= reservation.group_size %></p>
                               <p><%= link_to "Cancel", [reservation.restaurant, reservation], :method => :delete%></p>
                             </div>
                           </div>
