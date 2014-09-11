@@ -44,8 +44,12 @@
 						<p><strong>Summary:</strong> <%= @restaurant.summary%></p>
 						<!-- only show this if you are the owner of this restaurant -->
 						
-						<%#= link_to 'Delete Account', restaurant_path(@restaurant), :method => :delete %><br/>
-						<%= link_to 'Make a Reservation', new_restaurant_reservation_path(@restaurant) %>
+						<%#= link_to 'Delete Account', restaurant_path(@restaurant), :method => :delete %>
+						<% if current_user %>
+							<%= link_to 'Make a Reservation', new_restaurant_reservation_path(@restaurant) %>
+						<% else %>
+							<p></p>
+						<% end %>
 					</div>
 				</div>
 			</div>
@@ -75,11 +79,15 @@
 									<div class="large-12 columns comment-info">
 										<% if review.user != nil %>
 											<p id='commenter'><strong><%= review.user.name %></strong> on <em><%= review.created_at.strftime("%A, %B %d, %Y") %></em></p>
-											<% if current_user.id == review.user.id || current_user.id == @restaurant.user.id %>
-												<p><%= link_to "", [review.restaurant, review], :method => :delete, :class =>"fa fa-trash-o" %></p>
-											<% else %>
-												<p></p>
-											<% end %>
+												<% if current_user %>
+													<% if current_user.id == review.user.id || current_user.id == @restaurant.user.id %>
+														<p><%= link_to "", [review.restaurant, review], :method => :delete, :class =>"fa fa-trash-o" %></p>
+													<% else %>
+														<p></p>
+													<% end %>
+												<% else %>
+													<p></p>
+												<% end %>
 										<% end %>
 									</div>	
 								</div>
