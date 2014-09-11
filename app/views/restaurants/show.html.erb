@@ -17,7 +17,15 @@
         <div class="large-8 columns">
         	<div class="about-restaurant">
         		<h1><%= @restaurant.name %></h1>
-        		<%= link_to '', edit_restaurant_path(@restaurant), :class => 'fa fa-pencil' %><br/>
+        		<% if current_user %>
+	        		<% if current_user.id == @restaurant.user_id %>
+	        			<%= link_to '', edit_restaurant_path(@restaurant), :class => 'fa fa-pencil' %><br/>
+	        		<% else %>
+	        			<p></p>
+	        		<% end %>
+	        	<% else %>
+	        		<p></p>
+	        	<% end %>
       			<p><strong>Cuisine: </strong><%= @restaurant.category.cuisine%></p>
       			<p><%#= @restuarant.rating%></p>
       			<p><strong>Price range: </strong><%= @restaurant.price_range%></p>
