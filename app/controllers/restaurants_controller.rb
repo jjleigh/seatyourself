@@ -1,6 +1,8 @@
 class RestaurantsController < ApplicationController
     before_filter :ensure_logged_in, :only =>[:new, :create, :edit, :destroy, :update]
-	def find_restaurant
+	   respond_to :html, :js
+
+  def find_restaurant
 		Restaurant.find(params[:id])
 	end
 
@@ -14,20 +16,6 @@ class RestaurantsController < ApplicationController
   	 @restaurants = Restaurant.all
     end
   end
-
-  # def all
-  #   @restaurants = if params[:search]
-  #     Restaurant.where("LOWER(name) LIKE LOWER(?)", "%#{params[:search]}%").page(params[:page])
-  #   else
-  #     Restaurant.order('restaurants.name ASC').page(params[:page])
-  #   end
-
-  #   respond_to do |format| 
-  #     format.html
-  #     format.js 
-  #   end
-
-  # end
 
 
   def show
@@ -46,6 +34,7 @@ class RestaurantsController < ApplicationController
   def create
   	@restaurant = Restaurant.new(restaurant_params)
     @restaurant.user_id = current_user.id
+    @restaurant.category_id = 
   	if @restaurant.save
   		redirect_to restaurant_path(@restaurant)
   	else 

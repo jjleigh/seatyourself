@@ -3,6 +3,7 @@ class ReviewsController < ApplicationController
 	before_filter :ensure_logged_in 
 
 
+
 	def create
 
 		@review = @restaurant.reviews.build(review_params)
@@ -29,8 +30,17 @@ class ReviewsController < ApplicationController
 	def destroy
 		@review = Review.find(params[:id])
 
-		@review.destroy
-		redirect_to restaurant_path(@restaurant)
+		
+		respond_to do |format|
+
+			if @review.destroy
+				format.html {redirect_to restaurant_path(@restaurant.id)}
+				format.js
+			else
+				format.html{render 'restaurants/show', alert: 'There was an error'}
+				format.js {}
+			end
+		end
 		
 	end
 
