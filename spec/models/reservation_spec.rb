@@ -26,7 +26,4 @@ describe Reservation do
 	end
 
 
-	# have secure password test
-
-
 end
