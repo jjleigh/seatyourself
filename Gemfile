@@ -53,7 +53,12 @@ gem 'figaro'
 #Use foundation as the framework
 gem 'foundation-rails'
 
+group :development, :test do
+  gem 'rspec-rails', '~> 3.0.0'
+end
 
+gem 'faker'
+gem 'factory_girl_rails'
 
 group :production, :staging do
 	gem 'pg'
