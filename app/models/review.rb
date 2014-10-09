@@ -4,5 +4,4 @@ class Review < ActiveRecord::Base
 
 
 	validates :comment, presence: true
-	validates :comment, length: { maximum: 1000, too_long: "%{count} characters is the maximum allowed"}
 end
