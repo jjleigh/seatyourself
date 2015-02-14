@@ -11,44 +11,44 @@ Category.delete_all
 Category.create!(
 		:cuisine => "African",
 		:image => "african-sy.jpg",
-		:summary => "Find awesome African cuisine restuarants in your area, we have many to choose from. Do you love Jollof rice? have some Nigerian. Ever tried Ethiopian? if not check them out.",
+		:summary => "Find awesome African cuisine restaurants in your area, we have many to choose from. Do you love Jollof rice? have some Nigerian. Ever tried Ethiopian? if not check them out.",
 		:id => 1
 		)
 
 	Category.create!(
 		:cuisine => "Asian",
 		:image => "asian-sy.jpg",
-		:summary => "Find awesome Asian cuisine restuarants in your area, we have many to choose from. We have Indian, Chinese, Japanese, Thai, Korean. You name it we have it.",
+		:summary => "Find awesome Asian cuisine restaurants in your area, we have many to choose from. We have Indian, Chinese, Japanese, Thai, Korean. You name it we have it.",
 		:id => 2
 		)
 	Category.create!(
 		:cuisine => "Caribbean",
 		:image => "caribbean-sy.jpg",
-		:summary => "Find awesome Carribbean cuisine restuarants in your area, we have many to choose from. Come taste the flavours of the islands and try Jamaican, Trinidadian or Cuban.",
+		:summary => "Find awesome Carribbean cuisine restaurants in your area, we have many to choose from. Come taste the flavours of the islands and try Jamaican, Trinidadian or Cuban.",
 		:id => 3
 		)
 	Category.create!(
 		:cuisine => "European",
 		:image => "european-sy.jpg",
-		:summary => "Find awesome European cuisine restuarants in your area, we have many to choose from. Do you love Gyros? then try Greek, Everybody loves pasta and pizza, so try Italian, Want to try Paella? go for Spanish.",
+		:summary => "Find awesome European cuisine restaurants in your area, we have many to choose from. Do you love Gyros? then try Greek, Everybody loves pasta and pizza, so try Italian, Want to try Paella? go for Spanish.",
 		:id => 4
 		)
 	Category.create!(
 		:cuisine => "Middle Eastern",
 		:image => "middleeast-sy.jpg",
-		:summary => "Find awesome Middle Eastern cuisine restuarants in your area, we have many to choose from. Every tried Dolma? if not how about Turkish, we have Lebanese, Persian and many more too.",
+		:summary => "Find awesome Middle Eastern cuisine restaurants in your area, we have many to choose from. Every tried Dolma? if not how about Turkish, we have Lebanese, Persian and many more too.",
 		:id => 5
 		)
 	Category.create!(
 		:cuisine => "South American",
 		:image => "southamer-sy.jpg",
-		:summary => "Find awesome South american restuarants in your area, we have many to choose from. Try Mexican and have a burrito, Try Colombian and have a tasty empanada or go for Brazilian tonight and we have more. ",
+		:summary => "Find awesome South american restaurants in your area, we have many to choose from. Try Mexican and have a burrito, Try Colombian and have a tasty empanada or go for Brazilian tonight and we have more. ",
 		:id => 6
 		)
 	Category.create!(
 		:cuisine => "Vegetarian",
 		:image => "veg-sy.jpg",
-		:summary => "Find awesome Vegetarian, Vegan and Raw food restuarants in your area, we have many to choose from. Love your veggies? Then we have the places for you!",
+		:summary => "Find awesome Vegetarian, Vegan and Raw food restaurants in your area, we have many to choose from. Love your veggies? Then we have the places for you!",
 		:id => 7
 		)
 	Category.create!(
