@@ -43,6 +43,7 @@ gem 'carrierwave'
 gem 'rmagick', :require => 'RMagick'
 
 gem 'figaro'
+gem "haml-rails", "~> 0.8"
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
