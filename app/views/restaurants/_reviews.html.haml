@@ -1,0 +1,20 @@
+- @restaurant.reviews.each do |review|
+  .row.reviews-container
+    .large-12.columns
+      .row
+        .large-12.columns.comment-info
+          - if review.user != nil
+            %p#commenter
+              %strong= review.user.name
+              on
+              %em= review.created_at.strftime("%A, %B %d, %Y")
+            - if current_user
+              - if current_user.id == review.user.id || current_user.id == @restaurant.user.id
+                %p= link_to "", [review.restaurant, review], :remote => true, :method => :delete, :class =>"fa fa-trash-o"
+              - else
+                %p
+            - else
+              %p
+      .row.comment-text
+        .small-11.columns
+          %p= review.comment

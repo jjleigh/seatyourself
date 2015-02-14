@@ -1,0 +1,6 @@
+%h1 Your Reservations
+= @reservations.each do |r|
+  .reservations
+    = r.time
+    = r.date
+    = r.group_size

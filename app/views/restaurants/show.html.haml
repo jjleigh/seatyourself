@@ -1,0 +1,87 @@
+/ This holds the resturant information
+.row
+  .large-12.columns
+    .restaurant-bg
+      / about the restaurant
+      .row
+        .large-4.columns
+          = image_tag (@restaurant.url) , :class => 'restaurant-image'
+        .large-8.columns
+          .about-restaurant
+            %h1= @restaurant.name
+            - if current_user
+              - if current_user.id == @restaurant.user_id
+                = link_to '', edit_restaurant_path(@restaurant), :class => 'fa fa-pencil'
+                %br/
+              - else
+                %p
+            - else
+              %p
+            %p
+              %strong Cuisine:
+              = @restaurant.category.cuisine
+            %p
+            %p
+              %strong Price range:
+              = @restaurant.price_range
+      / restaurant contact
+      .row
+        .large-12.columns
+          .contact-restaurant
+            %p
+              %strong Phone:
+              = @restaurant.number
+            %p
+              %strong Address:
+              = @restaurant.address
+            %p
+              %strong Email:
+              = @restaurant.email
+            %p
+              %strong Capacity:
+              = @restaurant.capacity
+      .row
+        .large-10.large-centered.columns
+          .summary-restaurant
+            %p
+              %strong Summary:
+              = @restaurant.summary
+            / only show this if you are the owner of this restaurant
+            - if current_user
+              = link_to 'Make a Reservation', new_restaurant_reservation_path(@restaurant)
+            - else
+              %p
+/ reviews
+.row
+  .large-10.large-centered.columns.review-panel
+    - if current_user
+      .row.review-header
+        .large-10.large-centered.columns
+          %h3.text-center.review-header Reviews
+      #review-list
+        = render :partial => 'reviews'
+    - if current_user
+      .row
+        .large-12.columns
+          .row.review-form
+            .large-9.large-centered.columns.new-comment-input
+              = form_for ([@restaurant, @review]), :remote => true do |f|
+                - if @review.errors.any?
+                  #error_explanation
+                    %h2
+                      = pluralize(@review.errors.count, "error")
+                      prohibited this review from being saved:
+                    %ul
+                      - @review.errors.full_messages.each do |msg|
+                        %li= msg
+                / <div class="review-form">
+                .field
+                  = f.label :review, :id => 'comment-label'
+                  %br/
+                  = f.text_area :comment, :id => 'comment-box', :placeholder => 'write a new comment...'
+                .actions
+                  = f.submit 'post', :class => 'button [tiny small large] form-buttons'
+                / </div>
+    - else
+      %p
+        Please #{link_to "log in", new_session_path} to add a review.

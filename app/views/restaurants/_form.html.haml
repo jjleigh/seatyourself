@@ -1,0 +1,50 @@
+.row
+  .large-8.large-centered.columns
+    = form_for(@restaurant) do |f|
+      - if @restaurant.errors.any?
+        #error_explanation
+          %h2
+            = pluralize(@restaurant.errors.count, "error")
+            prohibited this product from being saved:
+          %ul
+            - @restaurant.errors.full_messages.each do |msg|
+              %li= msg
+      .site-forms
+        .field
+          = f.label :name
+          %br/
+          = f.text_field :name
+        .field
+          = f.label :email
+          %br/
+          = f.text_field :email
+        .field
+          = f.label :address
+          %br/
+          = f.text_field :address
+        .field
+          = f.label :number
+          %br/
+          = f.text_field :number
+        .field
+          = f.label :cuisine
+          %br/
+          = f.select(:category_id, [['African', 1],['Asian', 2],['Caribbean', 3],['European', 4],['Middle Eastern', 5],['South American', 6], ['Vegetarian', 7], ['Other',8], ['Dessert Café',9]])
+        .field
+          = f.label :summary
+          %br/
+          = f.text_area :summary
+        .field
+          = f.label :price_range
+          %br/
+          = f.select(:price_range, options_for_select([['$', 'Low'], ['$$', 'Mid-range'], ['$$$', 'High']]))
+        .field
+          = f.label :capacity
+          %br/
+          = f.text_field :capacity
+        .field
+          = f.label :image
+          %br/
+          = f.file_field :url
+        .actions
+          = f.submit 'Save', :class => 'button [tiny small large] form-buttons'

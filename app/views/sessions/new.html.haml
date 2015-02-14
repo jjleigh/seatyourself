@@ -1,0 +1,22 @@
+.row
+  .large-6.large-centered.columns
+    .form-containers
+      .form-header-container
+        .row
+          .large-12.columns
+            .form-header
+              %h1.text-center Log in
+      .row
+        .large-7.large-centered.columns
+          .site-forms
+            = form_tag sessions_path do
+              %div
+                = label_tag :email
+                %br/
+                = text_field_tag :email, params[:email]
+              %div
+                = label_tag :password
+                %br/
+                = password_field_tag :password
+              .actions
+                = submit_tag "Log in", :class => 'button [tiny small large] form-buttons'

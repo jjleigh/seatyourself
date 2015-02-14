@@ -1,0 +1,31 @@
+.bg-img
+  .row
+    .row
+      .large-8.large-centered.columns
+        %h1#discover Discover restaurants near you
+    = form_tag restaurants_path, action: "search" ,method: 'get' do
+      .row
+        .large-8.large-centered.columns
+          .large-7.push-2.columns
+            = text_field_tag :search, params[:search], :placeholder => 'Search for restaurants'
+          .large-2.pull-3.columns
+            = submit_tag "search", :name => nil, :class => 'button postfix input-button'
+.sticky
+  %nav.top-bar{"data-options" => "sticky_on: large", "data-topbar" => "", :role => "navigation"}
+    .category-page-header
+      .row
+        %h3.text-center Restaurants
+.panel-container
+  .row
+    - @restaurants.each do |restaurant|
+      .large-4.small-6.columns.cs-style-4.grid
+        %figure
+          .blur-img
+            = link_to image_tag (restaurant.url) , :class => 'index-restaurant-image'
+          %figcaption
+            %h5= restaurant.name
+            %p
+            %p
+            %span.subheader= link_to 'Go', restaurant_path(restaurant)
+.row
+  #res-table.large-12.large-centered.columns

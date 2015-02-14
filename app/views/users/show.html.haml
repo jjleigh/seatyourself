@@ -1,0 +1,40 @@
+.row
+  .large-8.push-4.columns
+    .row
+      .large-12
+        %h3.text-center.user-head Your Reservations
+    .row
+      .large-12.columns
+        .panel.user-images-panel
+          - @my_reservations.each do |reservation|
+            .row
+              .large-12.large-centered.columns
+                .reservation-header
+                  %h1.text-center Reservation
+            .row
+              .large-12.large-centered.columns
+                .reservation-details
+                  %p
+                    Restaurant: #{reservation.restaurant.name}
+                  %p
+                    Reservation time: #{reservation.time.strftime(" %l %p")}
+                  %p
+                    Reservation date: #{reservation.date.strftime("%A, %B %d, %Y")}
+                  %p
+                    Party of: #{reservation.group_size}
+                  %p= link_to "Cancel", [reservation.restaurant, reservation], :method => :delete
+  / This handles the side panel
+  .large-4.pull-8.columns
+    .panel.user-panel
+      .row
+        .large-12.large-centered.columns
+          %img.user-image{:src => "http://placekitten.com/g/400/500"}/
+      .row
+        .large-12.large-centerd.columns
+          %h4.text-center.user-side-head= current_user.name
+      .row
+        .large-12.columns
+          %ul.side-nav.text-center
+            %li= link_to "create a restaurant", new_restaurant_path
+            %li= link_to 'Edit account', edit_user_path(current_user), :class =>'fa fa-pencil'
+            %li= link_to 'Delete Account', user_path(current_user), :method => :delete, :class =>'fa fa-trash-o'

@@ -1,0 +1,22 @@
+.row
+  .large-7.large-centered.columns
+    .site-forms
+      = form_for (@user) do |f|
+        .fields
+          = f.label :name
+          %br/
+          = f.text_field :name
+        .fields
+          = f.label :email
+          %br/
+          = f.text_field :email
+        .fields
+          = f.label :password
+          %br/
+          = f.password_field :password
+        .fields
+          = f.label :password_confirmation
+          %br/
+          = f.password_field :password_confirmation
+        .actions.buttons
+          = f.submit 'Save', :class => 'button [tiny small large] form-buttons'

@@ -1,0 +1,26 @@
+.row
+  .large-7.large-centered.columns
+    = form_for [@restaurant, @reservation] do |f|
+      - if @reservation.errors.any?
+        #error_explanation
+          %h2
+            = pluralize(@reservation.errors.count, "error")
+            prohibited this products from being saved:
+          %ul
+            - @reservation.errors.full_messages.each do |msg|
+              %li= msg
+      .site-forms
+        .fields
+          = f.label :time
+          %br/
+          = f.select(:time, options_for_select(['6:00pm','7:00pm','8:00pm', '9:00pm', '10:00pm']))
+        .fields
+          = f.label :date
+          %br/
+          = f.select(:date, options_for_select(@limit))
+        .fields
+          = f.label :group_size
+          %br/
+          = f.text_field :group_size
+        .actions
+          = f.submit 'Create', :class => 'button [tiny small large] form-buttons'

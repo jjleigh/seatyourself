@@ -1,0 +1,17 @@
+.row
+  .large-10.large-centered.columns
+    .form-containers
+      .row
+        .large-12.large-centered.columns
+          .reservation-header
+            %h1.text-center Reservation made!
+      .row
+        .large-12.large-centered.columns
+          .reservation-details
+            %p
+              reservation time: #{@reservation.time}
+            %p
+              reservation date: #{@reservation.date}
+            %p
+              party of: #{@reservation.group_size}
+            %p See you soon!

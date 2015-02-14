@@ -1,0 +1,45 @@
+.bg-img
+  .row
+    .row
+      .large-8.large-centered.columns
+        %h1#discover Discover restaurants near you
+    = form_tag restaurants_path, :method => 'get' do
+      .row.search-form
+        .large-8.large-centered.columns
+          .large-7.push-2.columns
+            = text_field_tag :search, params[:search], :placeholder => 'Search for restaurants', :class => 'input-bar'
+          .large-2.pull-3.columns
+            = submit_tag "search", :name => nil, :class => 'button postfix input-button'
+.sticky
+  %nav.top-bar{"data-options" => "sticky_on: large", "data-topbar" => "", :role => "navigation"}
+    .category-page-header
+      .row
+        %h3.text-center Categories
+.catergory-panel-container
+  - @categories.each do |category|
+    .row
+      .large-12.small-12.columns
+        - if category.id.odd?
+          .row
+            .large-5.small-12.columns.category-figure
+              .cat-image-container
+                = link_to image_tag(category.image), category_path(category), :class => 'cat-image'
+                %span.caption
+                  %span
+                    = link_to category.cuisine, category_path(category)
+                    %span
+            .large-7.small-12.columns.summary-container
+              %h5= category.summary
+          %hr/
+        - else
+          .row
+            .large-7.small-12.columns.summary-container
+              %h5= category.summary
+            .large-5.small-12.columns.category-figure
+              .cat-image-container
+                = link_to image_tag(category.image), category_path(category), :class => 'cat-image'
+                %span.caption
+                  %span
+                    = link_to category.cuisine, category_path(category)
+                    %span
+          %hr/
