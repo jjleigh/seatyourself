@@ -1,0 +1,80 @@
+!!!
+%html{:lang => "en"}
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %meta{:charset => "utf-8"}/
+    %meta{:content => "width=device-width, initial-scale=1.0", :name => "viewport"}/
+    %title Seatyouself
+    %title= content_for?(:title) ? yield(:title) : "foundation-rails"
+    %link{:href => "http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css", :rel => "stylesheet"}/
+    %link{:href => "http://fonts.googleapis.com/css?family=Courgette", :rel => "stylesheet", :type => "text/css"}/
+    %link{:href => "http://fonts.googleapis.com/css?family=Muli:300,400", :rel => "stylesheet", :type => "text/css"}/
+    = stylesheet_link_tag    "application"
+    = javascript_include_tag "vendor/modernizr"
+    = csrf_meta_tags
+  %body
+    %header#head-nav
+      .sticky
+        %nav.top-bar.nav-bar{"data-topbar" => ""}
+          %ul.title-area
+            %li.name
+              .logo-container
+                %h1#app-logo= link_to 'Seat Yourself', restaurants_url
+            / Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone
+            %li.toggle-topbar.icon
+              %a{:href => "#"}
+                %span Menu
+          %section.top-bar-section
+            / Right Nav Section
+            %ul.right
+              .right-navigation-container
+                .row.collapse
+                  %li= link_to "Categories", categories_url
+                  - if current_user
+                    %li
+                      = link_to 'Profile', user_path(current_user)
+                    %li= link_to 'Log out', log_out_path
+                  - else
+                    %li= link_to 'Log In',new_session_path
+                    %li= link_to 'Sign Up',new_user_path
+    %main{:role => "main"}
+      = yield
+    - if flash[:notice]
+      %p#notice
+        - flash[:notice]
+    / footer panel
+    .learn-more
+      %footer.row
+        .large-12.columns.footer-container
+          %div{:clas => "row "}
+            .large-5.columns.about-container
+              %h5 About
+              %p Who are we
+              %p What is Seat yourself
+              %p Jobs
+              %p Press
+            .large-5.columns
+              %h5 Help
+              %p FAQ
+              %p Terms of service
+              %p Privacy policy
+              %p Trust and saftey
+          %hr/
+          .row
+            .large-6.columns.social-container
+              %p © Seat yourself
+            .large-6.columns
+              %ul.inline-list.right.social-container
+                %li
+                  %a{:href => "#"}
+                    %i.fa.fa-twitter.social-icons{:style => " color: silver"}
+                %li
+                  %a{:href => "#"}
+                    %i.fa.fa-tumblr.social-icons{:style => " color: silver"}
+                %li
+                  %a{:href => "#"}
+                    %i.fa.fa-facebook.social-icons{:style => " color: silver"}
+                %li
+                  %a{:href => "#"}
+                    %i.fa.fa-google-plus.social-icons{:style => " color: silver"}
+    = javascript_include_tag "application"
