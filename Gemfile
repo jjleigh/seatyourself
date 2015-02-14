@@ -32,7 +32,7 @@ gem 'bcrypt', '~> 3.1.7'
 # Use unicorn as the app server
 gem 'unicorn'
 
-
+gem 'pry-rails', :group => :development
 # Use fog to support amazon s3 for carrierwave
 gem "fog"
 # Use amazons sdk
