@@ -60,6 +60,6 @@ Category.create!(
 	Category.create!(
 		:cuisine => "Dessert",
 		:image => "dessert-sy.jpg",
-		:summary => "Find awesome Dessert cafe's in your area, we have many to choose from. Having a sweet craving, we do too...chekout our list of dessert shops",
+		:summary => "Find awesome Dessert cafe's in your area, we have many to choose from. Having a sweet craving, we do too...checkout our list of dessert shops",
 		:id => 9
 		)
