@@ -1,22 +1,19 @@
 class RestaurantsController < ApplicationController
-    before_filter :ensure_logged_in, :only =>[:new, :create, :edit, :destroy, :update]
-	   respond_to :html, :js
+  before_filter :ensure_logged_in, :only =>[:new, :create, :edit, :destroy, :update]
+  respond_to :html, :js
 
   def find_restaurant
 		Restaurant.find(params[:id])
 	end
-
-
 
   def index
     @restaurants = Restaurant.search(params[:search])
 
     if @restaurants.size.zero?
       flash.now[:alert] = "No results found"
-  	 @restaurants = Restaurant.all
+  	  @restaurants = Restaurant.all
     end
   end
-
 
   def show
   	@restaurant = Restaurant.find(params[:id])
